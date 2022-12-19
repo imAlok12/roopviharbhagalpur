@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The landing page of pleasure point hotel website">
+    <!--link to css, bootstrap and fontawesome and font-family-->
+    <!-- <link rel="stylesheet" href="/css/index.css" media="screen"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <title>RoopVihar</title>
+    <style>
+   /*Start of standard styling for css*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  height: 100%;
+}
+/*end of standard styling for css*/
+
+/*start of heading styling*/
+header {
+  position:fixed;
+  z-index : 17;
+  background-color: rgb(247, 245, 245);
+  width: 100%;
+  padding: 10px;
+}
+/*end of heading styling*/
+  
+/*start of hamburger styling*/
+  .collapse-btn {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 15px;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  .collapse-btn__burger {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+  }
+  
+  .collapse-btn__burger::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.5s ease-in-out; 
+  }
+  
+  .collapse-btn__burger::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.5s ease-in-out; 
+  }
+/*end of hamburger styling*/
+  
+/*start of opening and closing style for hamburger*/
+  .collapse-btn__burger.open {
+    transform: rotate(720deg);
+    background: transparent;
+  }
+  
+  .collapse-btn__burger.open::before {
+    transform: rotate(45deg) translate(5px,8px);
+  }
+  
+  .collapse-btn__burger.open::after {
+    transform: rotate(-45deg) translate(3px,-7px);
+  }
+/*end of opening and closing style for hamburger*/
+  
+/*start of logo styling*/
+  #logo { 
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+    font-size: 30px;
+  }
+  
+  sub {
+    color: #0275d8;
+  }
+/*end of logo styling*/
+  
+/*start of styling of navigation items*/
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .nav.open {
+    visibility: visible;
+    background-color: rgb(247, 245, 245);
+    height: 100vh;
+    transition: all 0.5s ease-out;
+  }
+  
+  .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+    list-style: none;
+    transition: all 1s ease-in-out;
+    transform: translateY(-100%);
+  }
+  
+  .menu-nav.open {
+    transform: translateX(0);
+  }
+  
+  .menu-nav__item {
+    transform: translateX(100vw);
+    padding: 30px 0;
+  }
+  
+  #unique-li {
+    visibility: hidden;
+  }
+  
+  .menu-nav__item.open {
+    transform: translateX(0);
+  }
+  
+  .menu-nav__link {
+    display: inline-block;
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  
+  .menu-nav__link:hover {
+    border-top: 3px solid #0275d8;
+    border-bottom: 3px solid #0275d8;
+    text-decoration: none;
+    color: #0275d8;
+    transform: scale(1);
+  }
+  
+  .menu-nav__link.active {
+    color: #0275d8;
+  }
+/*end of navigation bar styling*/
+
+/*start of styling for facilities section*/
+.section3 {
+  display: block;
+  background-color: rgb(231, 216, 216);  
+}
+
+/*start of styling for head section*/
+.section2__head {
+text-align: center;
+padding-top: 70px;
+color: #000;
+}
+
+.section2__head h3 {
+font-size: 35px;
+}
+
+.section2__head button a {
+font-size: 35px;
+color: #000;
+}
+
+.section2__flex {
+color: #000;
+}
+
+.btn-div {
+padding: 30px 0;
+}
+
+.btn-div a {
+position: relative;
+padding: 10px 15px;
+letter-spacing: 2px;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+color: #000;
+}
+
+.btn-div a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #0275d8;
+}
+
+.btn-div a svg, .btn-div a svg rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+.btn-div a svg rect {
+  stroke-width: 5;
+  stroke: #0275d8;
+  stroke-dasharray: 100;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+}
+/*end of styling for head section*/
+
+.section2__flex {
+text-align: center;
+}
+
+figcaption h4 {
+font-size: 30px;
+}
+
+figcaption h5 {
+font-size: 25px;
+}
+
+.second-img {
+width: 80%;
+margin: auto;
+height: 35vh;
+border-radius: 10px;
+box-shadow: -2px -2px 4px #000;
+}
+
+.modal-title {
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+
+.modal-btn span {
+  font-size: 50px;
+}
+
+.modal-body p {
+  font-size: 20px;
+}
+
+/*end of styling for facilities section*/
+
+
+/*start of styling for footer section*/
+.section6 {
+  color: #fff;
+}
+
+.footer__div1 {
+  text-align: center;
+}
+
+.ul1 {
+  list-style: none;
+  justify-content: space-around;
+}
+
+.ul1 li a {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease-in;
+  color: #fff;
+}
+
+.ul1 a:hover {
+  color: #0275d8;
+  transform: scale(1);
+}
+
+.div4 p {
+  font-size: 20px;
+}
+
+.div4 form input {
+  height: 3rem;
+  border-radius: 0 25px;
+  border: 2px solid #fff;
+  font-size: 15px;
+  font-weight: bold;
+  min-width: 30%;
+  margin: 0 5px;
+}
+
+.div4 form button {
+  height: 3rem;
+  font-size: 15px;
+  border-radius: 0 25px 0 0;
+  border: 2px solid #fff;
+  min-width: 25%;
+  font-weight: bold;
+  background-color: #fff;
+  color: rgb(105, 104, 104);
+}
+/*end of styling for footer section*/
+
+/*start of hr styling*/
+.second-hr {
+  width: 30%;
+  height: 3px;
+  margin: 0 auto;
+}
+/*end of hr styling*/
+
+/*start of button styling*/
+.first-a {
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.first-a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/*end of button styling*/
+
+
+
+@media only screen and (min-width:600px) {
+  
+    /*start of facilities section*/
+    .btn-div button {
+      width: 30%;
+    }
+    /*end of facilities section*/
+  
+  /*start of style for footer section*/
+  
+  .div4 p {
+    margin: auto;
+    width: 80%;
+  }
+  /*end of style for footer section*/
+}
+
+
+
+@media only screen and (min-width:768px) {
+    
+/*start of styling for navigation*/
+  .nav {
+      visibility: visible;
+      width: 100%;
+    }
+  
+    #unique__link {
+      display: none;
+    }
+  
+    .menu-nav {
+      display: block;
+      transform: translateY(0);
+      width: 100%;
+      text-align: right;
+    }
+  
+    .menu-nav__item {
+      display: inline;
+      padding-right: 10px;
+    }
+  
+    .menu-nav__link {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+/*end of styling for navigation*/
+
+    /*start of facilities section*/
+    
+    .section3 .section2__head {
+      padding-top: 70px;
+    }
+    .section2__head {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 70px;
+    }
+    
+    .second-hr {
+      margin: 0;
+      justify-content: start;
+    }
+    
+    .section2__head button {
+      border-radius: 10px;
+    }
+    
+    .section2__head button a {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    /*end of facilities section*/
+
+    /*start of footer section*/
+    .ul1 {
+      flex-direction: column;
+    }
+    /*end of footer section*/
+}
+
+@media only screen and (min-width:1024px) {
+    
+/*start of styling for navigation*/
+  #unique-li {
+    visibility: visible;
+  }
+  
+  #unique__link {
+    background-color: #0275d8;
+    border-radius: 10px;
+    padding: 5px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+/*end of styling for navigation*/
+
+    /*start of styling for footer section*/
+    .div4 form input {
+      width: 45%;
+    }
+  /*start of styling for footer section*/
+}
+/*start of carousel section styling*/
+
+.first-img {
+  overflow:hidden;
+  position: relative;
+  display: block;
+  min-height: 70vh;
+  margin: 0 auto;
+}
+
+.carousel-item:after {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.embedded-text {
+  position: absolute;
+  top: 25%;
+}
+
+.embedded-text h2 {
+  font-size: 30px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+.embedded-text p {
+  line-height: 1.5;
+  font-size: 17px;
+}
+
+.embedded-text button {
+  border: 2px solid #000;
+}
+
+.embedded-text button:hover {
+  background-color: #0275d8;
+  border: 2px solid #0275d8;
+}
+
+.small-btn {
+  padding:0;
+}
+/*end of carousel section styling*/
+
+/*start of styling for tablet screen size*/
+@media only screen and (min-width:600px) {
+/*start of carousel section*/
+  .embedded-text h2 {
+    font-size: 40px;
+  }
+  /*end of carousel section*/
+
+}
+/*end of styling for tablet screen size*/
+
+
+@media only screen and (min-width:768px) {
+  
+  /*start of style on carousel section*/
+
+  .embedded-text {
+    top: 30%;
+  }
+
+    .embedded-text p {
+      font-size: 20px;
+      width: 70%;
+      margin: auto;
+    }
+  
+    .embedded-text button a {
+      font-size: 20px;  
+    }
+  /*end of style for carousel section*/
+}
+
+
+/*start of styling for desktop screen size*/
+@media only screen and (min-width:1024px) {
+
+/*start of styling for carousel section*/
+
+.embedded-text {
+  top: 35%;
+}
+
+.embedded-text h2 {
+  font-size: 50px;
+  }
+/*end of styling for carousel section*/
+}
+/*end of styling for desktop screen size*/
+    </style>
+</head>
+<body>
+
+    <!--start of header tag-->
+    <header class="container-fluid">
+
+        <!--start of hamburger button on small screen size-->
+        <div class="collapse-btn d-md-none">
+            <span class="collapse-btn__burger"></span>
+        </div>
+        <!--end of burger div on small screen size-->
+        
+        <!--start of logo-->
+        <h1 id="logo">Roop<sub>Vihar</sub></h1>
+        <!--end of logo-->
+
+        <!--start of navigation bar-->
+        <nav class="nav">        
+            <ul class="menu-nav">
+                <li class="menu-nav__item"><a href="#home" class="menu-nav__link active" accesskey="h"><i class="fas fa-home d-md-none mr-2"></i>home</a></li>
+                <li class="menu-nav__item"><a href="/about.html" class="menu-nav__link" accesskey="a"><i class="fas fa-hotel d-md-none mr-2"></i>about us</a></li>
+                <li class="menu-nav__item"><a href="/contact.html" class="menu-nav__link" accesskey="c"><i class="fas fa-phone d-md-none mr-2"></i>contact us</a></li>
+                <li class="menu-nav__item" id="unique-li"><a href="/contact.html" id="unique__link" accesskey="b">book now</a></li>
+            </ul>
+        </nav>
+        <!--end of navigation bar-->
+
+    </header>
+    <!--end of header tag-->
+
+    <!--start of carousel section-->
+    <section class="section1" id="home">
+        <!--showing on small screen only-->
+        <div class="d-md-none carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/s1.jpg" alt="First Image" class="d-block w-100 first-img">
+                    <div class="carousel-caption embedded-text">
+                        <h2 data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out">Welcome to Pleasure Point</h2>
+                        <p data-aos="flip-left" data-aos-delay="1000" data-aos-duration="1000">Experience a magical stay & make the most beautiful memories with your loved ones at the resort</p>
+                        <div class="text-center text-capitalize btn-div small-btn" data-aos="zoom-out" data-aos-delay="1000" data-aos-duration="1000">
+                            <a href="/contact.html#book" class="text-white">
+                                <svg><rect></rect></svg>
+                                book now 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of showing on small screen-->
+
+        <!--start of carousel showing on larger screens-->
+        <div id="indicator" class="d-none d-md-block carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#indicator" data-slide-to="0" class="active"></li>
+                <li data-target="#indicator" data-slide-to="1"></li>
+                <li data-target="#indicator" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/s1.jpg" alt="First Image" class="d-block w-100 first-img">
+                    <div class="carousel-caption d-none d-md-block embedded-text">
+                        <h2  data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out">Welcome to Roop Vihar Resorts</h2>
+                        <p data-aos="flip-left" data-aos-delay="1000" data-aos-duration="1000">Experience a magical stay & make the most beautiful memories with your loved ones at the resort</p>
+                        <div class="text-center text-capitalize btn-div" data-aos="zoom-out" data-aos-delay="1000" data-aos-duration="1000">
+                            <a href="/contact.html#book" class="text-white">
+                                <svg><rect></rect></svg>
+                                book now 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/s2.jpg" alt="Second Image" class="d-block w-100 first-img">
+                    <div class="carousel-caption d-none d-md-block embedded-text">
+                        <h2>Welcome to Roop Vihar Resorts</h2>
+                        <p>Experience a magical stay & make the most beautiful memories with your loved ones at the resort</p>
+                        <div class="text-center text-capitalize btn-div">
+                            <a href="/contact.html#book" class="text-white">
+                                <svg><rect></rect></svg>
+                                book now 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/s3.jpg" alt="Third Image" class="d-block w-100 first-img">
+                    <div class="carousel-caption embedded-text">
+                        <h2>Welcome to Roop Vihar Resorts</h2>
+                        <p>Experience a magical stay & make the most beautiful memories with your loved ones at the resort</p>
+                        <div class="text-center text-capitalize btn-div">
+                            <a href="/contact.html#book" class="text-white">
+                                <svg><rect></rect></svg>
+                                book now 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="#indicator" role="button" data-slide="prev" class="carousel-control-prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a href="#indicator" role="button" data-slide="next" class="carousel-control-next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+    <div style="padding: 25px; background-color: #f2f2f2;">
+        <div class="about-default-header">
+            <h2 style="font-size: 50px;" class="about-default-h2"><span style="color: #ffc800;">Introduction</span>  of Resort</h2>
+            <p style="margin:10px;"><b>Welcome To Roop Vihar Resorts</b> </p>
+        </div>
+
+        <div>
+            <p style="word-spacing: 5px; margin: 10px;">
+                Since its inception in the year 2009 Roop Vihar Hotels &amp; Resorts has built a strong reputation for offering luxurious rooms and sprawling lush green lawns making it a grand venue for lodging, get-togethers, wedding events and conferences. Located away from the pandemonium of the city, it offers a peaceful stay and is yet close enough to the travel and business destinations of the Silk city. It is located on Suraj Mohan Thakur (Barari) Road just 5.4 kms away from Bhagalpur Railway Station and is easily accessible.<br>
+                Roop Vihar boasts of indulging its guests with a swimming pool, arched huts, organic gardens and serene landscapes that encourage not just fun and frolic but solitude and meditation too.<br>
+                The establishment has been chosen close to the bank of the holy Ganga to blend perfectly with its surroundings and is uniquely uplifting from the ordinary. 
+            </p>
+        </div>
+    </div>
+
+        <!--end of showing on larger screens-->
+    
+    
+    <!--end of carousel section-->
+
+    <!--start of facilities section-->
+<section class="section3 container-fluid" id="facilities">
+
+    <!--start of flex style for facility part-->
+    <div class="section2__flex">
+        <div class="row">
+            <div class="mt-4 col-md-6 col-lg-4">
+                <figure>
+                    <img class="second-img" src="/images/r1.jpg" alt="My Suite">
+                    <figcaption>
+                        <h4 class="mt-3 text-capitalize">STANDARD ROOMS</h4>
+                        <button class="btn btn-outline-primary text-capitalize" data-toggle="modal" data-target="#read1">
+                            <a href="#facilities" class="first-a">read more</a>
+                        </button>
+                    </figcaption>
+                </figure>
+
+                <!-- Modal -->
+                <div class="modal fade" id="read1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content bg-white">
+                        <div class="modal-header">
+                          <h6 class="modal-title" id="exampleModalLongTitle">STANDARD ROOMS</h6>
+                          <button type="button" class="close modal-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Spacious rooms size, Complementry breakfast, All rooms are provided with tea and coffee maker, Complementry mineral water.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--end of modal-->
+            </div>
+
+            <div class="mt-4 col-md-6 col-lg-4">
+                <figure>
+                    <img class="second-img" src="/images/r2.jpg" alt="My Suite">
+                    <figcaption>
+                        <h4 class="mt-3 text-capitalize">DELUXE ROOM</h4>
+                        <button class="btn btn-outline-primary text-capitalize" data-toggle="modal" data-target="#read2">
+                            <a href="#facilities" class="first-a">read more</a>
+                        </button>
+                    </figcaption>
+                </figure>
+
+                <!-- Modal -->
+                <div class="modal fade" id="read2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content bg-white">
+                        <div class="modal-header">
+                          <h6 class="modal-title" id="exampleModalLongTitle">DELUXE ROOM</h6>
+                          <button type="button" class="close modal-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Spacious rooms size, Complementry breakfast, All rooms are provided with tea and coffee maker, Complementry mineral water.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--end of modal-->
+            </div>
+
+            <div class="mt-4 d-none d-md-block col-md-6 col-lg-4">
+                <figure>
+                    <img class="second-img" src="/images/r3.jpg" alt="My Suite">
+                    <figcaption>
+                        <h4 class="mt-3 text-capitalize">SUITE ROOMS</h4>
+                        <button class="btn btn-outline-primary text-capitalize" data-toggle="modal" data-target="#read3">
+                            <a href="#facilities" class="first-a">read more</a>
+                        </button>
+                    </figcaption>
+                </figure>
+
+                <!-- Modal -->
+                <div class="modal fade" id="read3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content bg-white">
+                        <div class="modal-header">
+                          <h6 class="modal-title" id="exampleModalLongTitle">SUITE ROOMS</h6>
+                          <button type="button" class="close modal-btn" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Spacious rooms size, Complementry breakfast, All rooms are provided with tea and coffee maker, Complementry mineral water.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--end of modal-->
+            </div>
+        <!--end of flex style for facility part-->
+    </section>
+
+    <!--start of footer section-->
+         <section class="section6 bg-dark container-fluid">
+            <div class="footer__div1 py-5 row">
+
+                <div class="text-capitalize div2 col-md-6 col-lg-3">
+                    <ul class="ul1 d-flex">
+                        <li><a href="#home">home</a></li>
+                        <li><a href="/about.html">help</a></li>
+                        <li class="d-none d-md-block"><a href="/about.html">terms & conditions</a></li>
+                    </ul>
+                </div>
+                <div class="div4 col-lg-6">
+                    <p>Stay up to date with us and get amazing discounts</p>
+                    <div class="my-3 font-div">
+                            <a href="https://twitter.com/SpiderBoyAlok" target="_blank" rel="noreferrer"><i class="fab fa-twitter text-white fa-2x"></i></a>
+                            <a href="https://www.facebook.com/spider.boy.alok" target="_blank" rel="noreferrer"><i class="fab fa-facebook text-white fa-2x mx-5"></i></a>
+                            <a href="https://www.instagram.com/im_alok12_/" target="_blank" rel="noreferrer"><i class="fab fa-instagram text-white fa-2x"></i></a>
+                            <a href="https://www.linkedin.com/in/alok-arya-b5b206258/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin text-white fa-2x mx-5"></i></a>
+                    </div>             
+                </div>
+                
+                <div> <h5>DESIGNED BY</h5> <h6>Alok Arya</h6> <h6>© 2022</h6> </div>
+                
+            </div>
+        </section>
+    <!--end of footer section-->
+
+    <!--link to js and jquery, popper and font awesome-->
+    <script src="/index.js"></script>
+    <script src="/all.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/scripts.js"></script>
+</body>
+</html>

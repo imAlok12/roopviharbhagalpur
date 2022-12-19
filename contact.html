@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The contact page of pleasure point hotel website">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" media="screen">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <title>RoopVihar - Contact</title>
+    <style>
+/*Start of standard styling for css*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  height: 100%;
+}
+/*end of standard styling for css*/
+
+/*start of heading styling*/
+header {
+  position:fixed;
+  z-index : 17;
+  background-color: rgb(247, 245, 245);
+  width: 100%;
+  padding: 10px;
+}
+/*end of heading styling*/
+  
+/*start of hamburger styling*/
+  .collapse-btn {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+    top: 15px;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  .collapse-btn__burger {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+  }
+  
+  .collapse-btn__burger::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.5s ease-in-out; 
+  }
+  
+  .collapse-btn__burger::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 28px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.5s ease-in-out; 
+  }
+/*end of hamburger styling*/
+  
+/*start of opening and closing style for hamburger*/
+  .collapse-btn__burger.open {
+    transform: rotate(720deg);
+    background: transparent;
+  }
+  
+  .collapse-btn__burger.open::before {
+    transform: rotate(45deg) translate(5px,8px);
+  }
+  
+  .collapse-btn__burger.open::after {
+    transform: rotate(-45deg) translate(3px,-7px);
+  }
+/*end of opening and closing style for hamburger*/
+  
+/*start of logo styling*/
+  #logo { 
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+    font-size: 30px;
+  }
+  
+  sub {
+    color: #0275d8;
+  }
+/*end of logo styling*/
+  
+/*start of styling of navigation items*/
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .nav.open {
+    visibility: visible;
+    background-color: rgb(247, 245, 245);
+    height: 100vh;
+    transition: all 0.5s ease-out;
+  }
+  
+  .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+    list-style: none;
+    transition: all 1s ease-in-out;
+    transform: translateY(-100%);
+  }
+  
+  .menu-nav.open {
+    transform: translateX(0);
+  }
+  
+  .menu-nav__item {
+    transform: translateX(100vw);
+    padding: 30px 0;
+  }
+  
+  #unique-li {
+    visibility: hidden;
+  }
+  
+  .menu-nav__item.open {
+    transform: translateX(0);
+  }
+  
+  .menu-nav__link {
+    display: inline-block;
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
+  
+  .menu-nav__link:hover {
+    border-top: 3px solid #0275d8;
+    border-bottom: 3px solid #0275d8;
+    text-decoration: none;
+    color: #0275d8;
+    transform: scale(1);
+  }
+  
+  .menu-nav__link.active {
+    color: #0275d8;
+  }
+/*end of navigation bar styling*/
+
+/*start of styling for facilities section*/
+.section3 {
+  display: block;
+  background-color: rgb(231, 216, 216);  
+}
+
+/*start of styling for head section*/
+.section2__head {
+text-align: center;
+padding-top: 70px;
+color: #000;
+}
+
+.section2__head h3 {
+font-size: 35px;
+}
+
+.section2__head button a {
+font-size: 35px;
+color: #000;
+}
+
+.section2__flex {
+color: #000;
+}
+
+.btn-div {
+padding: 30px 0;
+}
+
+.btn-div a {
+position: relative;
+padding: 10px 15px;
+letter-spacing: 2px;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+color: #000;
+}
+
+.btn-div a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #0275d8;
+}
+
+.btn-div a svg, .btn-div a svg rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+}
+
+.btn-div a svg rect {
+  stroke-width: 5;
+  stroke: #0275d8;
+  stroke-dasharray: 100;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    stroke-dashoffset: 400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+
+}
+/*end of styling for head section*/
+
+.section2__flex {
+text-align: center;
+}
+
+figcaption h4 {
+font-size: 30px;
+}
+
+figcaption h5 {
+font-size: 25px;
+}
+
+.second-img {
+width: 80%;
+margin: auto;
+height: 35vh;
+border-radius: 10px;
+box-shadow: -2px -2px 4px #000;
+}
+
+.modal-title {
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+
+.modal-btn span {
+  font-size: 50px;
+}
+
+.modal-body p {
+  font-size: 20px;
+}
+
+/*end of styling for facilities section*/
+
+
+/*start of styling for footer section*/
+.section6 {
+  color: #fff;
+}
+
+.footer__div1 {
+  text-align: center;
+}
+
+.ul1 {
+  list-style: none;
+  justify-content: space-around;
+}
+
+.ul1 li a {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s ease-in;
+  color: #fff;
+}
+
+.ul1 a:hover {
+  color: #0275d8;
+  transform: scale(1);
+}
+
+.div4 p {
+  font-size: 20px;
+}
+
+.div4 form input {
+  height: 3rem;
+  border-radius: 0 25px;
+  border: 2px solid #fff;
+  font-size: 15px;
+  font-weight: bold;
+  min-width: 30%;
+  margin: 0 5px;
+}
+
+.div4 form button {
+  height: 3rem;
+  font-size: 15px;
+  border-radius: 0 25px 0 0;
+  border: 2px solid #fff;
+  min-width: 25%;
+  font-weight: bold;
+  background-color: #fff;
+  color: rgb(105, 104, 104);
+}
+/*end of styling for footer section*/
+
+/*start of hr styling*/
+.second-hr {
+  width: 30%;
+  height: 3px;
+  margin: 0 auto;
+}
+/*end of hr styling*/
+
+/*start of button styling*/
+.first-a {
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.first-a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+/*end of button styling*/
+
+
+
+@media only screen and (min-width:600px) {
+  
+    /*start of facilities section*/
+    .btn-div button {
+      width: 30%;
+    }
+    /*end of facilities section*/
+  
+  /*start of style for footer section*/
+  
+  .div4 p {
+    margin: auto;
+    width: 80%;
+  }
+  /*end of style for footer section*/
+}
+
+
+
+@media only screen and (min-width:768px) {
+    
+/*start of styling for navigation*/
+  .nav {
+      visibility: visible;
+      width: 100%;
+    }
+  
+    #unique__link {
+      display: none;
+    }
+  
+    .menu-nav {
+      display: block;
+      transform: translateY(0);
+      width: 100%;
+      text-align: right;
+    }
+  
+    .menu-nav__item {
+      display: inline;
+      padding-right: 10px;
+    }
+  
+    .menu-nav__link {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+/*end of styling for navigation*/
+
+    /*start of facilities section*/
+    
+    .section3 .section2__head {
+      padding-top: 70px;
+    }
+    .section2__head {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 70px;
+    }
+    
+    .second-hr {
+      margin: 0;
+      justify-content: start;
+    }
+    
+    .section2__head button {
+      border-radius: 10px;
+    }
+    
+    .section2__head button a {
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    /*end of facilities section*/
+
+    /*start of footer section*/
+    .ul1 {
+      flex-direction: column;
+    }
+    /*end of footer section*/
+}
+
+@media only screen and (min-width:1024px) {
+    
+/*start of styling for navigation*/
+  #unique-li {
+    visibility: visible;
+  }
+  
+  #unique__link {
+    background-color: #0275d8;
+    border-radius: 10px;
+    padding: 5px;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+/*end of styling for navigation*/
+
+    /*start of styling for footer section*/
+    .div4 form input {
+      width: 45%;
+    }
+  /*start of styling for footer section*/
+}
+/*start of contact section*/
+.contact-div1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 270vh;
+  background-image:url(/images/pool_and_hotel.jpg);
+  background-size: cover;
+}
+
+.container {
+  background-color: #e2dede;
+  overflow: hidden;
+  -webkit-box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 0 5px rgba(0, 0, 0, 0.5);
+  width: 500px;
+  max-width: 95%;
+  border-radius: 10px;
+}
+
+.container .head {
+  font-size: 25px;
+  padding: 10px 30px;
+  border-bottom: 1px solid #000;
+}
+
+.container .form {
+  padding: 30px 40px;
+}
+
+.container .form .control {
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+  position: relative;
+  font-weight: bold;
+}
+
+.container .form .control label, .container .form .control textarea {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.container .form .control input, .container .form .control select, .form .control textarea {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.container .form .control .check, .container .form .control .exclame {
+  position: absolute;
+  top: 40px;
+  right: -20px;
+  visibility: hidden;
+}
+
+.container .form .control small {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  font-weight: bold;
+  color: slategrey;
+}
+
+.container .form .success input, .container .form .success textarea {
+  border-color: green;
+}
+
+.container .form .success small {
+  visibility: hidden;
+}
+
+.container .form .success .check {
+  color: green;
+  visibility: visible;
+}
+
+.container .form .fail input, .container .form .fail textarea {
+  border-color: red;
+}
+
+.container .form .fail .exclame {
+  color: red;
+  visibility: visible;
+}
+
+.container .form .fail small {
+  color: red;
+  visibility: visible;
+}
+
+#message {
+  height: 20vh;
+}
+
+.container .form button {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/*end of contact styling*/
+
+/*start of info styling*/
+  .info {
+    background-color: rgb(231, 216, 216);
+    height: auto;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  }
+  h5 {
+    letter-spacing: 2px;
+  }
+
+  .email form a {
+    font-size: 17px;
+    text-decoration: none;
+  }
+
+  .email form a:hover {
+    text-decoration:none;
+  }
+/*end of info styling*/
+
+@media only screen and (min-width:992px) {
+      /*start of contact section*/
+    .contact-div1 {
+      min-height: 130vh;
+    }
+    /*end of contact styling*/
+}
+    </style>
+</head>
+<body>
+
+        <!--start of header tag-->
+        <header class="container-fluid">
+
+            <!--start of hamburger button on small screen size-->
+            <div class="collapse-btn d-md-none">
+                <span class="collapse-btn__burger"></span>
+            </div>
+            <!--end of burger div on small screen size-->
+            
+            <!--start of logo-->
+            <h1 id="logo">Roop<sub>Vihar</sub></h1>
+            <!--end of logo-->
+    
+            <!--start of navigation bar-->
+            <nav class="nav">        
+                <ul class="menu-nav">
+                    <li class="menu-nav__item"><a href="/index.html" class="menu-nav__link active" accesskey="h"><i class="fas fa-home d-md-none mr-2"></i>home</a></li>
+                    <li class="menu-nav__item"><a href="/about.html" class="menu-nav__link" accesskey="a"><i class="fas fa-hotel d-md-none mr-2"></i>about us</a></li>
+                    <li class="menu-nav__item"><a href="#contact" class="menu-nav__link" accesskey="c"><i class="fas fa-phone d-md-none mr-2"></i>contact us</a></li>
+                    <li class="menu-nav__item" id="unique-li"><a href="#contact" id="unique__link" accesskey="b">book now</a></li>
+                </ul>
+            </nav>
+            <!--end of navigation bar-->
+    
+        </header>
+        <!--end of header tag-->
+
+        <!--start of contact section-->
+            <section class="section5 container-fluid" id="contact">
+                <div class="contact-div1 row">
+                        
+                    <div class="container col-lg-6">
+
+                        <div class="head text-capitalize font-weight-bold text-center">get in touch with us</div>
+                
+                        <form id="form" class="form">
+                
+                            <div class="control">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter Your Name Here">
+                                <i class="fas fa-check-circle check"></i>
+                                <i class="fas fa-exclamation-circle exclame"></i>
+                                <small>
+                                    <sup>*</sup>Preferably Your full name
+                                </small>
+                            </div>
+                
+                            <div class="control">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Input Your Email-Address">
+                                <i class="fas fa-check-circle check"></i>
+                                <i class="fas fa-exclamation-circle exclame"></i>
+                                <small>
+                                    <sup>*</sup>To get a quick reply to your message
+                                </small>
+                            </div>
+
+                            <div class="control">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message"></textarea>
+                                <i class="fas fa-check-circle check"></i>
+                                <i class="fas fa-exclamation-circle exclame"></i>
+                                <small>
+                                    <sup>*</sup>Enter Your Message Here
+                                </small>
+                            </div>
+                
+                            <button class="btn btn-outline-primary">submit</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-5 container mt-2" id="book">
+                        <div class="head text-capitalize font-weight-bold text-center">get booked with us</div>
+                        <form action="#" class="form">
+                            <div class="control">
+                                <label for="rooms">Rooms :</label> 
+                                <select name="loc" id="loc" class="text-capitalize">
+                                    <option value="hill">5-Star Room</option>
+                                    <option value="sea">4-Star Room</option>
+                                    <option value="main">Fully A.C. Room</option>
+                                    <option value="legend">A.C. Room</option>
+                                    <option value="master">Non-A.C. Room</option>
+                                    <option value="sea1">Hall</option>
+                                </select>
+                            </div>
+    
+                            <div class="control">
+                                <label for="dateIn">Check-In :</label>
+                                <input type="date">
+                           </div>
+
+                            <div class="control">
+                                <label for="dateOut">Check-Out :</label>
+                                <input type="date">
+                            </div>
+
+                            <div class="control">
+                                <label for="guest">Guests :</label>
+                                <select name="guest" id="guest" class="text-capitalize">
+                                    <option value="first">1 guest</option>
+                                    <option value="second">2 guests</option>
+                                    <option value="third">3 guests</option>
+                                    <option value="four">4 guests</option>
+                                    <option value="more">5+ guests</option>
+                                </select>
+                            </div>
+
+                            <button class="btn btn-outline-primary">view rate</button>
+    
+                            </form>
+                    </div>
+                </div>
+            </section>
+        <!--end of contact section-->
+
+        <!--start of information section-->
+            <section class="container-fluid info">
+                <div class="container py-3 my-5">
+                    <h5 class="text-capitalize font-weight-bolder">contact details</h5>
+                    <h6>Reach out to us and we are always happy to hear from you</h6><br>
+                    <div class="row">
+                        <div class="col-md-7 col-lg-4 ads d-flex font-weight-bolder">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary mr-3"></i>
+                            <address>
+                                Roop Vihar Resorts, Barari<br>
+                                Road Bhagalpur- 812003<br>
+                            </address>
+                        </div>
+                    
+                        <div class="col-md-5 col-lg-4 text-center font-weight-bolder">
+                            <p>+91 7488515406</p>
+                            <p>+91 8010213628</p>
+                        </div>
+                        <div class="col-md-12 col-lg-4 email text-center font-weight-bolder">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <a href="mailto:info@roopvihar.com">info@roopvihar.com</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!--end of information section-->
+    
+
+            <!--start of footer section-->
+            <section class="section6 bg-dark container-fluid">
+                <div class="footer__div1 py-5 row">
+    
+                    <div class="text-capitalize div2 col-md-6 col-lg-3">
+                        <ul class="ul1 d-flex">
+                            <li><a href="#home">home</a></li>
+                            <li><a href="/about.html">help</a></li>
+                            <li class="d-none d-md-block"><a href="/about.html">terms & conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="div4 col-lg-6">
+                        <p>Stay up to date with us and get amazing discounts</p>
+                        <div class="my-3 font-div">
+                                <a href="https://twitter.com/SpiderBoyAlok" target="_blank" rel="noreferrer"><i class="fab fa-twitter text-white fa-2x"></i></a>
+                                <a href="https://www.facebook.com/spider.boy.alok" target="_blank" rel="noreferrer"><i class="fab fa-facebook text-white fa-2x mx-5"></i></a>
+                                <a href="https://www.instagram.com/im_alok12_/" target="_blank" rel="noreferrer"><i class="fab fa-instagram text-white fa-2x"></i></a>
+                                <a href="https://www.linkedin.com/in/alok-arya-b5b206258/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin text-white fa-2x mx-5"></i></a>
+                        </div>             
+                    </div>
+                    
+                    <div> <h5>DESIGNED BY</h5> <h6>Alok Arya</h6> <h6>© 2022</h6> </div>
+                    
+                </div>
+            </section>
+        <!--end of footer section-->
+
+            <!--link to js and jquery, popper and font awesome-->
+    <script src="/index.js"></script>
+    <script src="/all.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
